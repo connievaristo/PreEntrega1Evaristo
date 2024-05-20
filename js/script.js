@@ -62,5 +62,5 @@ if (edadUsuario < 18 && edadUsuario >= 0) {
     celular = (prompt("Por favor indicanos un número de teléfono"));
     console.log(nombreUsuario + " tiene " + edadUsuario + " años. Su celular es " + celular);
 } else {
-    alert("Por favor, ingresá un número válido.")
+    alert("No ingresó una edad válida.")
 };    
