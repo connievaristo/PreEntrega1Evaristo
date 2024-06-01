@@ -3,6 +3,17 @@ let cuotas;
 let montoCuotas;
 let montoInteres;
 
+/*prueba .includes
+const cuotasTest = [3,6,9,12];
+console.log(cuotasTest.includes(3)); //true
+
+cuotas = parseInt(prompt("Indicá en cuántas cuotas querés pagar (3, 6, 9 o 12)"));
+if ([3, 6, 9, 12].includes(cuotas)){
+    console.log("Cuotas elegidas "+ cuotas)
+} else {
+    alert("ingresar cuotas válidas")
+};
+*/
 const aplicarInteres = (monto, interes) => { return montoInteres = monto * interes };
 
 function calculaMontoCuota(a, b) {
@@ -15,52 +26,73 @@ function calculaMontoCuota(a, b) {
 
 do {
     monto = parseFloat(prompt("Indicá el monto que querés pagar en cuotas."));
-    if (isNaN(monto || monto <= 0)){
+    if (isNaN(monto || monto <= 0)) {
         alert("No ingresó un monto válido")
     };
 } while (isNaN(monto) || monto <= 0);
 
-do {
+while (true) {
     cuotas = parseInt(prompt("Indicá en cuántas cuotas querés pagar (3, 6, 9 o 12)"));
-    if (cuotas == 3 || cuotas == 6 || cuotas == 9 || cuotas == 12) {
-        switch (cuotas) {
-            case 3:
-                aplicarInteres(monto, 1.3);
-                calculaMontoCuota(monto, 3);
-                break;
-            case 6:
-                aplicarInteres(monto, 1.6);
-                calculaMontoCuota(montoInteres, 6);
-                break;
-            case 9:
-                aplicarInteres(monto, 1.9);
-                calculaMontoCuota(montoInteres, 9);
-                break;
-            case 12:
-                aplicarInteres(monto, 1.12);
-                calculaMontoCuota(montoInteres, 12);
-                break;
-            default:
-                console.log("Hubo un error en la operación");
-        };
-        console.log("El usuario quiere pagar " + monto + " en " + cuotas + " cuotas");
+    if ([3, 6, 9, 12].includes(cuotas)) {
+        break; //deja de iterar si se cumple la condición de arriba
     } else {
-        alert("No ingresó una cantidad de cuotas válida.");
+        alert("Ingresar una cantidad de cuotas válida (3, 6, 9 o 12)");
     }
-} while (cuotas !== 3 && cuotas !== 6 && cuotas !== 9 && cuotas !== 12);//Avanza si el usuario ingresa una de esas opciones, si no no sigue al resto del código.
+}; ////Avanza si se cumple la condición, si no no sigue al resto del código porque no sale del loop
+
+switch (cuotas) {
+    case 3:
+        aplicarInteres(monto, 1.3);
+        calculaMontoCuota(monto, 3);
+        break;
+    case 6:
+        aplicarInteres(monto, 1.6);
+        calculaMontoCuota(montoInteres, 6);
+        break;
+    case 9:
+        aplicarInteres(monto, 1.9);
+        calculaMontoCuota(montoInteres, 9);
+        break;
+    case 12:
+        aplicarInteres(monto, 1.12);
+        calculaMontoCuota(montoInteres, 12);
+        break;
+    default:
+        console.log("No ingresó una cantidad de cuotas válida.");
+};
+console.log("El usuario quiere pagar " + monto + " en " + cuotas + " cuotas");
 
 alert("Son " + cuotas + " cuotas de " + Math.round(montoCuotas) + ". El monto total es de " + Math.round(montoInteres));
 
+//Tomar datos del usuario y guardarlos en un Array
 
-let nombreUsuario = prompt("Ahora vamos a pedirte algunos datos para contactarte. Por favor, ingresá tu nombre.");
-let edadUsuario = parseInt(prompt("Indicanos tu edad"));
-let celular;
+const personas = [];
 
-if (edadUsuario < 18 && edadUsuario >= 0) {
-    alert("No podemos avanzar con personas menores de 18 años.")
-} else if (edadUsuario >= 18) {
-    celular = (prompt("Por favor indicanos un número de teléfono"));
-    console.log(nombreUsuario + " tiene " + edadUsuario + " años. Su celular es " + celular);
-} else {
-    alert("No ingresó una edad válida.")
-};    
+class Usuario {
+    constructor(nombre, edad, celular) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.celular = celular;
+    }
+    validarEdad() {
+        if (this.edad < 18 && this.edad >= 0) {
+            alert("No podemos avanzar con personas menores de 18 años.")
+        } else if (this.edad >= 18) {
+            alert("Lo estaremos contactando a la brevedad al " + this.celular)
+        } else {
+            alert("No ingresó una edad válida.")
+        }
+    }
+};
+
+personas.push(new Usuario(prompt("Vamos a pedirte algunos datos para contactarte. Por favor, ingresá tu nombre."), prompt("Indicanos tu edad"), prompt("Indicanos un número de teléfono")));
+
+for (const persona of personas){
+    persona.validarEdad()
+};
+
+//filter que solo me traiga a las personas mayores  a 18
+const personasMayores = personas.filter((persona) => persona.edad >= 18);
+console.log(personasMayores);
+
+//agregar para repetir proceso?
