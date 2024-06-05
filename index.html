@@ -1,12 +1,47 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Cuotas</title>
+    <title>LOLA DECO</title>
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
+
 <body>
-    <h1>Financiá tu pago con nosotros</h1>
-    <h2>¡Aprovechá 3, 6, 9 o 12 cuotas fijas!</h2>
-    <script src="js/script.js"></script>
+    <header id="header">
+        <nav>
+            <div>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="./pages/productos.html">Productos</a></li>
+                    <li><a href="./pages/nosotros.html">Sobre Nostros</a></li>
+                    <li><a href="./pages/contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1>Financiá tu próximo mueble con nosotros</h1>
+        <h2>¡20% OFF en un pago o aprovechá 3, 6, 9 o 12 cuotas fijas!</h2>
+        <section class="someProducts">
+            <h3>Algunos de nuestros productos</h3>
+            <div>
+                <ul>
+                    <li>Mesa de luz $50000</li>
+                    <li>Mesa comedor $180000</li>
+                    <li>Espejo $35000</li>
+                    <li>Rack de TV $89500</li>
+                </ul>
+            </div>
+            <button onclick="simularCuota()">Simular cuotas</button>
+            <button onclick="agregarContacto()">Datos de Contacto</button>
+        </section>
+    </main>
+    <footer>
+        <p>Constanza Evaristo - Coderhouse</p>
+    </footer>
+    <script src="js/index.js"></script>
+
 </body>
+
 </html>
