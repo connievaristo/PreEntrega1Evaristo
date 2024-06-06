@@ -25,6 +25,9 @@ function calculaMontoCuota(a, b) {
     };
 };
 
+const botonCuotas = document.getElementById('botonCuotas');
+botonCuotas.addEventListener('click', simularCuota);
+
 function simularCuota() {
     do {
         monto = parseFloat(prompt("Ingresá el monto cotizado del producto que querés pagar en cuotas."));
@@ -86,6 +89,9 @@ class Usuario {
         }
     }
 };
+
+const botonContacto = document.getElementById('botonContacto');
+botonContacto.addEventListener('click', agregarContacto);
 
 function agregarContacto() {
     const nuevaPersona = new Usuario(prompt("Vamos a pedirte algunos datos para contactarte. Por favor, ingresá tu nombre."), prompt("Indicanos tu edad"), prompt("Indicanos un número de teléfono"));

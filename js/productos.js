@@ -51,6 +51,7 @@ const productos = [{
 }
 ];
 
+
 const divProd = document.createElement('div'); //Creo al div para los productos
 const sectionProd = document.getElementById('products'); //Traigo a la section que declaré en HTML con el id
 sectionProd.appendChild(divProd); //Anido al div de productos en la section
@@ -61,6 +62,9 @@ for (const producto of productos) {
     texto.innerHTML = literal; //Guardo texto en la etiqueta para que lo muestre
     divProd.appendChild(texto); //Lo guardo en el div
 };
+
+const botonID = document.getElementById('botonID');
+botonID.addEventListener('click',buscarId);
 
 function buscarId() {
     const idIngresado = prompt("Ingresá el nombre del producto para ver el ID (tal cual está escrito en la descripción)");
