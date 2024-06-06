@@ -1,3 +1,3 @@
-Completar monto y cuotas (3, 6, 9 o 12) para conocer el valor de cada una de ellas.
+Clickear botón para cotizar el monto en cuotas (3, 6, 9 o 12). Botón de contacto para los datos (nombre, edad y celular).
 
-Luego, indicar nombre, edad (solo mayores a 18) y celular.
+Página "Productos" para buscar ID del producto.
