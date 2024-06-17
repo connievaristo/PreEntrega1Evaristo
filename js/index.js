@@ -1,43 +1,24 @@
-let monto;
-let cuotas;
+// let monto;
+// let cuotas;
+let formulario = document.getElementById('formCalcularCuotas');
+let monto = document.getElementById('montoForm');
+let cuotas = document.getElementById('cuotasForm');
+const botonCuotas = document.getElementById('botonCuotas');
 let montoCuotas;
 let montoInteres;
 
-// //prueba .includes
-// const cuotasTest = [3,6,9,12];
-// console.log(cuotasTest.includes(3)); //true
-// console.log(cuotasTest.includes(11)); //false
-
-// cuotas = parseInt(prompt("Indicá en cuántas cuotas querés pagar (3, 6, 9 o 12)"));
-// if ([3, 6, 9, 12].includes(cuotas)){
-//     console.log("Cuotas elegidas: "+ cuotas)
-// } else {
-//     alert("ingresar cuotas válidas")
-// };
-
-const aplicarInteres = (monto, interes) => { return montoInteres = monto * interes };
-
-function calculaMontoCuota(a, b) {
-    if (b > 0) {
-        return montoCuotas = a / parseInt(b);
-    } else {
-        "Ingrese un número válido. No se puede dividir por cero."
-    };
-};
-
-const botonCuotas = document.getElementById('botonCuotas');
-botonCuotas.addEventListener('click', simularCuota);
+botonCuotas.addEventListener("click", almacenarValores);
 
 function simularCuota() {
+    console.log(`Monto ingresado: ${monto.value} - Cuotas ingresadas: ${cuotas.value}`)
     do {
-        monto = parseFloat(prompt("Ingresá el monto cotizado del producto que querés pagar en cuotas."));
-        if (isNaN(monto || monto <= 0)) {
+        if (isNaN(monto) || monto <= 0) {
             alert("No ingresó un monto válido")
         };
     } while (isNaN(monto) || monto <= 0);
 
     while (true) {
-        cuotas = parseInt(prompt("Indicá en cuántas cuotas querés pagar (3, 6, 9 o 12)"));
+        // cuotas = parseInt(prompt("Indicá en cuántas cuotas querés pagar (3, 6, 9 o 12)"));
         if ([3, 6, 9, 12].includes(cuotas)) {
             break; //Deja de iterar si se cumple la condición 
         } else {
@@ -66,8 +47,21 @@ function simularCuota() {
             console.log("No ingresó una cantidad de cuotas válida.");
     };
     console.log("El usuario quiere pagar " + monto + " en " + cuotas + " cuotas");
-
+    
     alert("Son " + cuotas + " cuotas de " + Math.round(montoCuotas) + ". El monto total es de " + Math.round(montoInteres));
+    
+};
+
+
+
+const aplicarInteres = (monto, interes) => { return montoInteres = monto * interes };
+
+function calculaMontoCuota(a, b) {
+    if (b > 0) {
+        return montoCuotas = a / parseInt(b);
+    } else {
+        console.log("Número inválido. No se puede dividir por cero.");
+    };
 };
 
 //Tomar datos del usuario y guardarlos en un Array
@@ -90,8 +84,8 @@ class Usuario {
     }
 };
 
-const botonContacto = document.getElementById('botonContacto');
-botonContacto.addEventListener('click', agregarContacto);
+// const botonContacto = document.getElementById('botonContacto');
+// botonContacto.addEventListener('click', agregarContacto);
 
 function agregarContacto() {
     const nuevaPersona = new Usuario(prompt("Vamos a pedirte algunos datos para contactarte. Por favor, ingresá tu nombre."), prompt("Indicanos tu edad"), prompt("Indicanos un número de teléfono"));

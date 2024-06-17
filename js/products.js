@@ -53,7 +53,7 @@ const productos = [{
 
 
 const divProd = document.createElement('div'); //Creo al div para los productos
-const sectionProd = document.getElementById('products'); //Traigo a la section que declaré en HTML con el id
+const sectionProd = document.getElementById('sectionProd'); //Traigo a la section que declaré en HTML con el id
 sectionProd.appendChild(divProd); //Anido al div de productos en la section
 
 for (const producto of productos) {

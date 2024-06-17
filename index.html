@@ -3,21 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
     <title>LOLA DECO</title>
-    <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
     <header id="header">
-        <nav>
-            <div>
-                <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="./pages/productos.html">Productos</a></li>
-                    <li><a href="./pages/contacto.html">Contacto</a></li>
-                </ul>
-            </div>
-        </nav>
     </header>
     <main>
         <h1>Financiá tu próximo mueble con nosotros</h1>
@@ -25,24 +16,29 @@
         <section class="someProducts">
             <h3>Algunos de nuestros productos</h3>
             <div>
-                <ul>
+                <!-- <ul>
                     <li>Mesa de luz $50000</li>
                     <li>Mesa comedor $180000</li>
                     <li>Espejo $35000</li>
                     <li>Rack de TV $89500</li>
-                </ul>
-                <input id="botonCuotas" type="button" value="Simular cuotas">
-                <input id="botonContacto" type="button" value="Contactenme">
+                </ul> -->
+                <form action="" id="formCalcularCuotas">
+                    <label for="">Ingresar el valor del producto para simular cuotas</label>
+                    <input type="text" id="montoForm">
+                    <label for="">Ingresar la cantidad de cuotas (3, 6, 9 o 12)</label>
+                    <input type="text" id="cuotasForm">
+                    <input type="button" id="botonCuotas" value="Calcular">
+                </form>
+                <!-- <input type="text" id="botonContacto"> -->
             </div>
             <!-- <button onclick="simularCuota()">Simular cuotas</button>
             <button onclick="agregarContacto()">Datos de Contacto</button> -->
         </section>
     </main>
     <footer>
-        <p>Lunes a viernes de 9:30 a 19:00. Sábados de 9:00 a 14:30.</p>
     </footer>
+    <script src="js/navegacion.js"></script>
     <script src="js/index.js"></script>
-
 </body>
 
 </html>
