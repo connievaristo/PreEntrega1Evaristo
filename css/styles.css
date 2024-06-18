@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color:#fdf9f3;
+    background-color:rgb(238, 238, 238);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -58,26 +58,98 @@ h2 {
     font-size: 2rem;   
 }
 
-.someProducts{ /*cambiar a grid?*/
+h3 {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    font-size: 1.5rem;   
 }
 
-#products {
+h4{
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+}
+
+.botonera {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1.125rem;
+}
+
+.botonera button {
+    background-color: rgb(44, 42, 44);
+    width: 6rem;
+    border: 1px solid gray;
+    border-radius: 0.5rem;
+    color: white;
+    font-size: 1rem;
+}
+
+.slide {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    padding: 1rem;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.slide li {
+    display: none;
+    flex: 0 0 100%;
     justify-content: center;
     align-items: center;
 }
 
-#products button{
-    width: 200px;
+.slide li img {
+    width: 600px;
+    height: 600px;
+    border-radius: 1rem;
 }
 
-#products p {
-    text-align: center;
+.slide li p {
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+.slide li.active {
+    display: block;
+}
+
+.control {
+    cursor: pointer;
+    padding: 10px;
+}
+
+#formCalcularCuotas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem;
+    font-size: 0.875rem;
+}
+
+#formCalcularCuotas button {
+    width: 4.125rem;
+    background-color: rgb(44, 42, 44);
+    color: white;
+    border: 1px solid gray;
+    border-radius: 0.315rem;
+    padding: 0.325rem;
+    margin-bottom: 0.5rem;
+    
+}
+
+.txtCuotas {
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem;
+    font-size:0.875rem;
 }
 
 .historia p {
@@ -99,10 +171,13 @@ form input{
 }
 
 
-/* footer {
+
+
+footer {
+    height: 5%;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: #ffc7ff;
-    margin-top: 1rem;
-}  */
+    align-items: center;
+    background-color: #fcd4fc;
+} 

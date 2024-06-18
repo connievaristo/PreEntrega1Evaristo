@@ -1,31 +1,108 @@
-// let monto;
-// let cuotas;
-let formulario = document.getElementById('formCalcularCuotas');
-let monto = document.getElementById('montoForm');
-let cuotas = document.getElementById('cuotasForm');
-const botonCuotas = document.getElementById('botonCuotas');
+const containerGaleria = document.querySelector('.slide');
+const controlAnt = document.querySelector('.controlAnt');
+const controlSig = document.querySelector('.controlSig');
+
+const fotos = [
+    {
+        nombre: 'Rack de TV',
+        precio: 250000
+    },
+    {
+        nombre: 'Mesa Cava',
+        precio: 120000
+    },
+    {
+        nombre: 'Sillón',
+        precio: 400000
+    },
+    {
+        nombre: 'Mesa de Luz',
+        precio: 150000
+    }
+    ]; //Nombre de fotos
+let currentIndex = 0;
+
+const formCalcularCuotas = document.getElementById('formCalcularCuotas');
+const divCalculo = document.getElementById('divCalculo');
+const textoCuotas = document.createElement('p');
+textoCuotas.className = "txtCuotas";
 let montoCuotas;
 let montoInteres;
 
-botonCuotas.addEventListener("click", almacenarValores);
-
-function simularCuota() {
-    console.log(`Monto ingresado: ${monto.value} - Cuotas ingresadas: ${cuotas.value}`)
-    do {
-        if (isNaN(monto) || monto <= 0) {
-            alert("No ingresó un monto válido")
+//Función para generar elementos de la galería de fotos
+function crearGaleria() {
+    fotos.forEach((img, index) => {
+        const li = document.createElement('li');
+        const image = document.createElement('img');
+        image.src = `img/${img.nombre}.jpg`; //paso parámetro img
+        image.alt = `img ${index + 1}`;
+        const p = document.createElement('p');
+        p.textContent = `${img.nombre} - $${img.precio}`;
+        li.appendChild(image);
+        li.appendChild(p);
+        if (index === 0) {
+            li.classList.add('active'); //Declaro que el primer elemento va a ser el "activo"
         };
-    } while (isNaN(monto) || monto <= 0);
+        containerGaleria.appendChild(li);
+    });
+};
 
-    while (true) {
-        // cuotas = parseInt(prompt("Indicá en cuántas cuotas querés pagar (3, 6, 9 o 12)"));
-        if ([3, 6, 9, 12].includes(cuotas)) {
-            break; //Deja de iterar si se cumple la condición 
-        } else {
-            alert("Ingresar una cantidad de cuotas válida (3, 6, 9 o 12)");
+//Función para mostrar la imagen según el índice
+function mostrarImagen(index) {
+    const itemsGaleria = document.querySelectorAll('.slide li'); //selecciono todos los li dentro de la id slide
+    itemsGaleria.forEach((li, i) => {
+        li.classList.toggle('active', i === index);
+    });
+}
+
+//Función para mostrar la imagen SIGUIENTE
+function mostrarSig() {
+    currentIndex = (currentIndex + 1) % fotos.length; //??
+    mostrarImagen(currentIndex); //Muestro esa imagen
+};
+
+//Funcion para mostrar la imagen ANTERIOR
+function mostrarAnt() {
+    currentIndex = (currentIndex - 1 + fotos.length) % fotos.length;
+    mostrarImagen(currentIndex);
+};
+
+controlAnt.addEventListener('click', mostrarAnt);
+controlSig.addEventListener('click', mostrarSig);
+
+crearGaleria();
+mostrarImagen(currentIndex);
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    formCalcularCuotas.addEventListener('submit', function (e) { //Agarro al formulario y le aplico evento para que no recargue
+        e.preventDefault();
+        //Agarro los valores de los inputs
+        const montoForm = parseFloat(document.getElementById('montoForm').value);
+        const cuotasForm = parseInt(document.getElementById('cuotasForm').value);
+
+        if (isNaN(montoForm) || isNaN(cuotasForm) || montoForm <= 0 || ![3, 6, 9, 12].includes(cuotasForm)) {
+            textoCuotas.textContent = "Por favor, ingrese un monto válido y una cantidad de cuotas válida (3, 6, 9 o 12)";
+            divCalculo.appendChild(textoCuotas);
+            return;
         }
-    }; ////Avanza si se cumple la condición, si no no sigue al resto del código porque no sale del loop
+        textoCuotas.textContent = "";
+        //Almaceno los valores de los inputs
+        localStorage.setItem('Monto', montoForm);
+        localStorage.setItem('Cuotas', cuotasForm);
+        console.log("Valores guardados, monto: " + montoForm + " y cuotas: " + cuotasForm);
+        //Me TRAIGO los valores de los inputs
+        const monto = parseFloat(localStorage.getItem('Monto'));
+        const cuotas = parseInt(localStorage.getItem('Cuotas'));
+        //Ejecuto función para calcular las cuotas
+        simularCuota(monto, cuotas);
 
+    });
+});
+
+//Función para calcular las cuotas
+function simularCuota(monto, cuotas) {
     switch (cuotas) {
         case 3:
             aplicarInteres(monto, 1.3);
@@ -45,17 +122,17 @@ function simularCuota() {
             break;
         default:
             console.log("No ingresó una cantidad de cuotas válida.");
+            localStorage.clear();
+            formCalcularCuotas.reset();
     };
-    console.log("El usuario quiere pagar " + monto + " en " + cuotas + " cuotas");
-    
-    alert("Son " + cuotas + " cuotas de " + Math.round(montoCuotas) + ". El monto total es de " + Math.round(montoInteres));
-    
+    textoCuotas.textContent = "Eligió abonar $" + monto + " en " + cuotas + " cuotas de $" + Math.round(montoCuotas) + ". El importe total final es de $" + Math.round(montoInteres);
+    divCalculo.appendChild(textoCuotas);
 };
 
-
-
+//Función para aplicar interés
 const aplicarInteres = (monto, interes) => { return montoInteres = monto * interes };
 
+//Función para calcular el IMPORTE de la cuota
 function calculaMontoCuota(a, b) {
     if (b > 0) {
         return montoCuotas = a / parseInt(b);
@@ -64,36 +141,3 @@ function calculaMontoCuota(a, b) {
     };
 };
 
-//Tomar datos del usuario y guardarlos en un Array
-const personas = [];
-
-class Usuario {
-    constructor(nombre, edad, celular) {
-        this.nombre = nombre;
-        this.edad = edad;
-        this.celular = celular;
-    }
-    validarEdad() {
-        if (this.edad < 18 && this.edad >= 0) {
-            alert("No podemos avanzar con personas menores de 18 años.")
-        } else if (this.edad >= 18) {
-            alert("Lo estaremos contactando a la brevedad al " + this.celular)
-        } else {
-            alert("No ingresó una edad válida.")
-        }
-    }
-};
-
-// const botonContacto = document.getElementById('botonContacto');
-// botonContacto.addEventListener('click', agregarContacto);
-
-function agregarContacto() {
-    const nuevaPersona = new Usuario(prompt("Vamos a pedirte algunos datos para contactarte. Por favor, ingresá tu nombre."), prompt("Indicanos tu edad"), prompt("Indicanos un número de teléfono"));
-
-    nuevaPersona.validarEdad(); //Valido edad de la persona creada (new Usuario guardado en una constante)
-
-    personas.push(nuevaPersona); //Lo guardo en el array de personas
-
-    const personasMayores = personas.filter((persona) => persona.edad >= 18); //Hago array de solo personas >= 18
-    console.log(personasMayores);
-};

@@ -12,31 +12,27 @@
     </header>
     <main>
         <h1>Financiá tu próximo mueble con nosotros</h1>
-        <h2>¡20% OFF en un pago o aprovechá 3, 6, 9 o 12 cuotas fijas!</h2>
-        <section class="someProducts">
-            <h3>Algunos de nuestros productos</h3>
-            <div>
-                <!-- <ul>
-                    <li>Mesa de luz $50000</li>
-                    <li>Mesa comedor $180000</li>
-                    <li>Espejo $35000</li>
-                    <li>Rack de TV $89500</li>
-                </ul> -->
-                <form action="" id="formCalcularCuotas">
-                    <label for="">Ingresar el valor del producto para simular cuotas</label>
-                    <input type="text" id="montoForm">
-                    <label for="">Ingresar la cantidad de cuotas (3, 6, 9 o 12)</label>
-                    <input type="text" id="cuotasForm">
-                    <input type="button" id="botonCuotas" value="Calcular">
-                </form>
-                <!-- <input type="text" id="botonContacto"> -->
-            </div>
-            <!-- <button onclick="simularCuota()">Simular cuotas</button>
-            <button onclick="agregarContacto()">Datos de Contacto</button> -->
+        <section>
+            <h3>Algunos de nuestros productos</h2>
+            <ul class="slide"></ul>
+            <section class="botonera">
+                <button class="controlAnt">Anterior</button>
+                <button class="controlSig">Siguiente</button>
+            </section>
         </section>
+        <h4>Calculadora de Cuotas</h4>
+        <form action="" id="formCalcularCuotas">
+            <label for="">Ingresar el valor cotizado</label>
+            <input type="text" id="montoForm">
+            <label for="">Ingresar cantidad de cuotas (3, 6, 9 o 12)</label>
+            <input type="text" id="cuotasForm">
+            <button type="submit">Calcular</button>
+        </form>
+        <div id="divCalculo"></div>
     </main>
     <footer>
     </footer>
+    <script src="js/global.js"></script>
     <script src="js/navegacion.js"></script>
     <script src="js/index.js"></script>
 </body>

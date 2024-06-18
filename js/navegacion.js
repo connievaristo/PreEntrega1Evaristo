@@ -1,17 +1,3 @@
-//Variables:
-const cuerpo = document.body;
-const cabecera = document.getElementById('header');
-const navegacion = document.createElement('div'); 
-const nav = document.createElement('nav');
-const ul = document.createElement('ul');
-const links = ["Index", "Products", "Contact"];
-const liImg = document.createElement('li');
-const img = document.createElement('img');
-const ORIGEN = document.createElement('a');
-const footer = document.getElementsByTagName('footer'); //Agarro al footer
-const pFooter = document.createElement('p');
-const TIME = new Date().getFullYear();
-
 cabecera.appendChild(navegacion); //pongo al navegacion en el header
 navegacion.appendChild(nav);
 nav.appendChild(ul);
@@ -30,3 +16,6 @@ for (const link of links){
     li.innerHTML = `<a href="${link.toLowerCase()}.html" >${link}</a>`;
     ul.appendChild(li);
 };
+
+footer[0].appendChild(pFooter); //Se anexa al footer como hijo del primer elemento -> [0]
+pFooter.textContent = "Constanza Evaristo - Coderhouse";
