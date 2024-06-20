@@ -54,7 +54,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;   
+    font-size: 1.5rem;   
 }
 
 h3 {
@@ -124,13 +124,34 @@ h4{
     padding: 10px;
 }
 
-#formCalcularCuotas {
+#formCalcularCuotas, .contact {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0.5rem;
     font-size: 0.875rem;
+}
+
+.contact {
+    flex-direction: row;
+}
+
+.contact label{
+    font-weight: 500;
+}
+
+.contactForm div{
+    margin: 1rem;
+    
+}
+
+.contactForm p{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    font-size: 0.875rem;
+    font-weight: 450;
 }
 
 #formCalcularCuotas button {
@@ -141,7 +162,6 @@ h4{
     border-radius: 0.315rem;
     padding: 0.325rem;
     margin-bottom: 0.5rem;
-    
 }
 
 .txtCuotas {
@@ -157,17 +177,10 @@ h4{
     padding: 0.5rem;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 1rem;
-}
-
 form input{
     padding: 0.5rem;
     margin: 0.75rem;
-}
+} 
 
 .line {
     width: 100%;
