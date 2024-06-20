@@ -83,7 +83,7 @@ function addToCart(productID, cantidad) {
 //Función para crear al elemento del producto para que se vea
 function renderProductos() {
     const listaProducto = document.getElementById('sectionProd');
-    listaProducto.innerHTML = ''; //limpio
+    listaProducto.innerHTML = '';
     productos.forEach(producto => {
         const productoDiv = document.createElement('div');
         productoDiv.innerHTML = `<p>${producto.product} - $${producto.precio}</p>
@@ -95,7 +95,7 @@ function renderProductos() {
 //Función para crear lista  del carrito
 function renderCart() {
     const carritoDiv = document.getElementById('carrito');
-    carritoDiv.innerHTML = ''; //limpio
+    carritoDiv.innerHTML = '';
     cart.forEach(item => {
         const itemDiv = document.createElement('div');
         itemDiv.innerHTML = `<p>ID: ${item.id} Nombre: ${item.product} Cantidad: ${item.cantidad} Precio total: $${item.precioTotal}</p>`;
@@ -110,14 +110,12 @@ function renderCart() {
 
     const buttonLimpiar = document.createElement('button');
     buttonLimpiar.className = 'vaciarCart';
-    buttonLimpiar.textContent='Vaciar carrito';
+    buttonLimpiar.textContent = 'Vaciar carrito';
     carritoDiv.appendChild(buttonLimpiar);
-    buttonLimpiar.addEventListener('click',limpiarCarrito);
+    buttonLimpiar.addEventListener('click', limpiarCarrito);
 };
 
-
-
-//Función para alamacenar carrito en el LocalStorage (JSON)
+//Función para alamacenar carrito en el LocalStorage
 function guardarCartEnLocalStorage() {
     localStorage.setItem('cart', JSON.stringify(cart));
 };
@@ -131,7 +129,7 @@ function cargarCartdeLocalStorage() {
 //Función para limpiar carrito
 function limpiarCarrito() {
     cart = [];
-    localStorage.clear;
+    guardarCartEnLocalStorage(); //Guardo carrito vacío
     
     const carritoDiv = document.getElementById('carrito');
     carritoDiv.innerHTML = 'No hay productos en el carrito'; //limpio
@@ -140,7 +138,6 @@ function limpiarCarrito() {
 document.addEventListener('DOMContentLoaded', () => {
     renderProductos();
     renderCart();
-    limpiarCarrito();
 });
 
 

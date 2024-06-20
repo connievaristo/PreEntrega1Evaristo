@@ -1,25 +1,8 @@
 const containerGaleria = document.querySelector('.slide');
 const controlAnt = document.querySelector('.controlAnt');
 const controlSig = document.querySelector('.controlSig');
-
 const fotos = [
-    {
-        nombre: 'Rack de TV',
-        precio: 250000
-    },
-    {
-        nombre: 'Mesa Cava',
-        precio: 120000
-    },
-    {
-        nombre: 'Sillón',
-        precio: 400000
-    },
-    {
-        nombre: 'Mesa de Luz',
-        precio: 150000
-    }
-    ]; //Nombre de fotos
+    { nombre: 'Rack de TV', precio: 250000 }, { nombre: 'Mesa Cava', precio: 120000 }, { nombre: 'Sillón', precio: 400000 }, { nombre: 'Mesa de Luz', precio: 150000 }];
 let currentIndex = 0;
 
 const formCalcularCuotas = document.getElementById('formCalcularCuotas');
@@ -34,7 +17,7 @@ function crearGaleria() {
     fotos.forEach((img, index) => {
         const li = document.createElement('li');
         const image = document.createElement('img');
-        image.src = `img/${img.nombre}.jpg`; //paso parámetro img
+        image.src = `img/${img.nombre}.jpg`; //Paso parámetro img
         image.alt = `img ${index + 1}`;
         const p = document.createElement('p');
         p.textContent = `${img.nombre} - $${img.precio}`;
@@ -49,19 +32,19 @@ function crearGaleria() {
 
 //Función para mostrar la imagen según el índice
 function mostrarImagen(index) {
-    const itemsGaleria = document.querySelectorAll('.slide li'); //selecciono todos los li dentro de la id slide
+    const itemsGaleria = document.querySelectorAll('.slide li'); //Selecciono todos los li dentro de la id slide
     itemsGaleria.forEach((li, i) => {
         li.classList.toggle('active', i === index);
     });
 }
 
-//Función para mostrar la imagen SIGUIENTE
+//Función para mostrar la imagen SIGUIENTE +
 function mostrarSig() {
-    currentIndex = (currentIndex + 1) % fotos.length; //??
+    currentIndex = (currentIndex + 1) % fotos.length;
     mostrarImagen(currentIndex); //Muestro esa imagen
 };
 
-//Funcion para mostrar la imagen ANTERIOR
+//Funcion para mostrar la imagen ANTERIOR -
 function mostrarAnt() {
     currentIndex = (currentIndex - 1 + fotos.length) % fotos.length;
     mostrarImagen(currentIndex);
@@ -73,17 +56,16 @@ controlSig.addEventListener('click', mostrarSig);
 crearGaleria();
 mostrarImagen(currentIndex);
 
-
-
+//Función / Evento para ejecutar cálculo de cuotas
 document.addEventListener('DOMContentLoaded', function () {
     formCalcularCuotas.addEventListener('submit', function (e) { //Agarro al formulario y le aplico evento para que no recargue
         e.preventDefault();
         //Agarro los valores de los inputs
         const montoForm = parseFloat(document.getElementById('montoForm').value);
         const cuotasForm = parseInt(document.getElementById('cuotasForm').value);
-
+        //Valido valores OK
         if (isNaN(montoForm) || isNaN(cuotasForm) || montoForm <= 0 || ![3, 6, 9, 12].includes(cuotasForm)) {
-            textoCuotas.textContent = "Por favor, ingrese un monto válido y una cantidad de cuotas válida (3, 6, 9 o 12)";
+            textoCuotas.textContent = "Por favor, ingrese un monto válido y/o una cantidad de cuotas válida (3, 6, 9 o 12)";
             divCalculo.appendChild(textoCuotas);
             return;
         }

@@ -1,7 +1,7 @@
-cabecera.appendChild(navegacion); //pongo al navegacion en el header
+cabecera.appendChild(navegacion);
 navegacion.appendChild(nav);
 nav.appendChild(ul);
-navegacion.className = 'navbar'; //le pongo una clase al div este
+navegacion.className = 'navbar';
 
 ul.appendChild(liImg);
 liImg.appendChild(ORIGEN);
@@ -9,7 +9,7 @@ liImg.appendChild(ORIGEN);
 ORIGEN.href = '/';
 ORIGEN.appendChild(img);
 img.src = 'img/logo.png'; //Es esto en html: <img src="img/logo.png"
-img.alt = 'CoderHouse'; // alt="Lola Deco">
+img.alt = 'Lola Deco'; // alt="Lola Deco">
 
 for (const link of links){
     const li = document.createElement('li');
