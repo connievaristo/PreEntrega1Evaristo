@@ -75,7 +75,6 @@ function addToCart(productID, cantidad) {
             precioTotal: cantidad * producto.precio
         });
     }
-
     guardarCartEnLocalStorage();
     renderCart();
 };
@@ -130,7 +129,7 @@ function cargarCartdeLocalStorage() {
 function limpiarCarrito() {
     cart = [];
     guardarCartEnLocalStorage(); //Guardo carrito vacío
-    
+
     const carritoDiv = document.getElementById('carrito');
     carritoDiv.innerHTML = 'No hay productos en el carrito'; //limpio
 };
