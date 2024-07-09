@@ -2,7 +2,7 @@ const containerGaleria = document.querySelector('.slide');
 const controlAnt = document.querySelector('.controlAnt');
 const controlSig = document.querySelector('.controlSig');
 const fotos = [
-    { nombre: 'Rack de TV', precio: 250000 }, { nombre: 'Mesa Cava', precio: 120000 }, { nombre: 'Sillón', precio: 400000 }, { nombre: 'Mesa de Luz', precio: 150000 }];
+    { nombre: 'Rack_de_TV',product: 'Rack de TV', precio: 250000 }, { nombre: 'Mesa_Cava', product: 'Mesa Cava', precio: 120000 }, { nombre: 'Sillon',product: 'Sillón', precio: 400000 }, { nombre: 'Mesa_de_Luz', product: "Mesa de Luz", precio: 150000 }];
 let currentIndex = 0;
 
 const formCalcularCuotas = document.getElementById('formCalcularCuotas');
@@ -20,7 +20,7 @@ function crearGaleria() {
         image.src = `img/${img.nombre}.jpg`; //Paso parámetro img
         image.alt = `img ${index + 1}`;
         const p = document.createElement('p');
-        p.textContent = `${img.nombre} - $${img.precio}`;
+        p.textContent = `${img.product} - $${img.precio}`;
         li.appendChild(image);
         li.appendChild(p);
         if (index === 0) {

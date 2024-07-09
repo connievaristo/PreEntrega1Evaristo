@@ -1,0 +1,71 @@
+[{
+    "id": 1,
+    "product": "Mesa de Luz",
+    "precio": 150000,
+    "descripcion": "Alto 70cm Ancho 50cm Profundidad 40cm",
+    "imagen": "img/Mesa_de_Luz.jpg"
+},
+{
+    "id": 2,
+    "product": "Mesa comedor",
+    "precio": 200000,
+    "descripcion": "Alto 76cm Ancho 80cm Largo 120cm",
+    "imagen": "img/Mesa_Comedor.jpg"
+},
+{
+    "id": 3,
+    "product": "Espejo",
+    "precio": 50000,
+    "descripcion": "Alto 173cm Ancho 69cm",
+    "imagen": "img/Espejo.jpg"
+},
+{
+    "id": 4,
+    "product": "Rack de TV",
+    "precio": 250000,
+    "descripcion": "Alto 51cm Ancho 160cm Profundidad 34cm",
+    "imagen": "img/Rack_de_TV.jpg"
+},
+{
+    "id": 5,
+    "product": "Silla Windsor",
+    "precio": 45000,
+    "descripcion": "Alto 82cm Ancho de la silla 48cm Profundidad 42cm - Ancho asiento 43 cm",
+    "imagen": "img/Silla.jpg"
+},
+{
+    "id": 6,
+    "product": "Escritorio",
+    "precio": 110000,
+    "descripcion": "Alto 780cm Ancho 60cm Largo 120cm",
+    "imagen": "img/Escritorio.jpg"
+},
+{
+    "id": 7,
+    "product": "Mesa de Arrime",
+    "precio": 170000,
+    "descripcion": "Alto 77cm Ancho 30cm Largo 120cm",
+    "imagen": "img/Mesa_Arrime.jpg"
+},
+{
+    "id": 8,
+    "product": "Mesa Cava",
+    "precio": 120000,
+    "descripcion": "Alto 60cm Ancho 45cm Profundidad 45cm",
+    "imagen": "img/Mesa_Cava.jpg"
+},
+{
+    "id": 9,
+    "product": "Sillón",
+    "precio": 400000,
+    "descripcion": "Alto 80cm Ancho 2m Profundidad 90cm",
+    "imagen": "img/Sillon.jpg"
+},
+{
+    "id": 10,
+    "product": "Lámpara de Pie Oslo",
+    "precio": 80000,
+    "descripcion": "Alto 150cm Ancho 47cm",
+    "imagen": "img/Lampara_Pie.jpg"
+}
+]

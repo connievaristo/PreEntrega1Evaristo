@@ -207,6 +207,24 @@ form input{
     font-weight: 500;
 }
 
+.tarjetas{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.card{
+    align-items: center;
+}
+
+.card img{
+    width: 16rem;
+    padding: .5rem;
+}
+
 #carrito div{
     margin: 0.4rem;
 }
@@ -225,15 +243,18 @@ form input{
     margin: 0.425rem;
 }
 
-.vaciarCart, .botonGrey {
+.vaciarCart, .botonGrey, .comprar {
+    margin-top: 0.25rem;
     padding: 0.425rem;
-    margin-left:2rem;
     border-radius: 0.325rem;
     border: 0.025rem solid gray;
     background-color: #4d464d;
     color: white;
 }
 
+.swal2-confirm {
+    background-color: #4d464d !important;
+}
 
 footer {
     height: 5%;
@@ -242,4 +263,4 @@ footer {
     justify-content: center;
     align-items: center;
     background-color: #fcd4fc;
-} 
+}
