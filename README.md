@@ -1,3 +1,6 @@
-Clickear botón para cotizar el monto en cuotas (3, 6, 9 o 12). Botón de contacto para los datos (nombre, edad y celular).
+LOLA DECO
+Página Index: Carrusel de fotos de muebles con precio, simulador de cuotas (3, 6, 9 o 12).
 
-Página "Productos" para buscar ID del producto.
+Página Products - Carrito con opción de vaciarlo.
+
+Página Contact: Enviar datos para ser contactado.
