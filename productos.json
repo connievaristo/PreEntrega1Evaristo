@@ -67,5 +67,61 @@
     "precio": 80000,
     "descripcion": "Alto 150cm Ancho 47cm",
     "imagen": "img/Lampara_Pie.jpg"
+},
+{
+    "id": 11,
+    "product": "Sillón de Mimbre",
+    "precio": 150000,
+    "descripcion": "Ancho 85cm Profundidad 70cm",
+    "imagen": "https://www.bruguesmosconi.com.ar/wp-content/uploads/2013/09/sillon-cancun.jpg"
+},
+{
+    "id": 12,
+    "product": "Mesa de Exterior de Hierro",
+    "precio": 200000,
+    "descripcion": "Alto 50cm Ancho 130cm",
+    "imagen": "https://www.dellacasaonline.com/wp-content/uploads/2022/08/Mesa-exterior-Marbella-1-scaled-e1690417039493.jpg"
+},
+{
+    "id": 13,
+    "product": "Sillas para jardín plegable",
+    "precio": 43000,
+    "descripcion": "Alto 77cm Ancho 46cm",
+    "imagen": "https://morgadohogar.com.ar/wp-content/uploads/2020/12/27418_1.jpg"
+},
+{
+    "id": 14,
+    "product": "Set juego de exterior",
+    "precio": 270000,
+    "descripcion": "Dos sillas y una mesita",
+    "imagen": "https://indahaus.com.ar/wp-content/uploads/2022/07/KEX05_2.jpg"
+},
+{
+    "id": 15,
+    "product": "Cama dos plazas con cajones",
+    "precio": 300000,
+    "descripcion": "Colchón de 140 x 190",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_614317-MLA73937567890_012024-O.webp"
+},
+{
+    "id": 16,
+    "product": "Cama Queen con cajones",
+    "precio": 400000,
+    "descripcion": "Largo 203cm Ancho 162cm Alto 33cm",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_796540-MLU72855742770_112023-O.webp"
+},
+{
+    "id": 17,
+    "product": "Cama 1 plaza con cajones",
+    "precio": 200000,
+    "descripcion": "Largo 190cm Ancho 80cm",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_744286-MLA74017377143_012024-O.webp"
+},
+{
+    "id": 18,
+    "product": "Rack de TV Industrial",
+    "precio": 290000,
+    "descripcion": "Alto 185cm Ancho 180cm Profundidad 30cm",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_780479-MLA53267810150_012023-O.webp"
 }
 ]

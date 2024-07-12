@@ -54,7 +54,7 @@ function addToCart(productID, cantidad) {
     Toastify({
         text: "Producto agregado al carrito",
         className: "info",
-        gravity: "bottom",
+        gravity: "top",
         style: {
           background: "#4d464d",
         },
